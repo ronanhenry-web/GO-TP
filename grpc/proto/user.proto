@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "grpc/proto/pb";
+
+service UserService {
+  rpc GetUserByID (IDRequest) returns (UserResponse);
+}
+
+message IDRequest {
+  int32 id = 1;
+}
+
+message UserResponse {
+  string name = 1;
+  int32 age = 2;
+}
